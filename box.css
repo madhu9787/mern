@@ -1,0 +1,33 @@
+.box{
+    color: blue;
+    border:2px red solid;
+    border-radius: 10px;
+   /* background-color: aquamarine;*/
+
+   margin: 5px;
+    padding: 20px;
+}
+.box:hover{
+    background-color: cyan;
+}
+.container{
+    display: flex;
+    height:100vh;
+    justify-content:space-evenly;
+    align-items:center;
+}
+.container div{
+ border: 2px solid blue;
+ width: 100px;
+ height: 100px;
+ background-color: aqua;
+ 
+
+}
+.container .two{
+    flex-shrink: 0;
+
+}
+.box:hover{
+    background-color: rgb(0, 255, 255);
+}

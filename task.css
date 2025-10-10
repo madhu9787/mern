@@ -1,0 +1,29 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+
+}
+.nav h2{
+  color:white;
+  padding-left: 10px;
+}
+.left{
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  list-style-type: none;
+  color:white;
+  padding-top: 2px;
+  
+}
+li:hover{
+  background-color:gold;
+}
+@media (max-width:480px){
+.nav{
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
+ }
