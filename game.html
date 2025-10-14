@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stone Paper Scissor Game</title>
+</head>
+<body>
+
+<h1>Stone Paper Scissor Game</h1>
+<button onclick="play('Stone')">Stone</button>
+<button onclick="play('Paper')">Paper</button>
+<button onclick="play('Scissor')">Scissor</button>
+
+<p id="result"></p>
+
+<script>
+function play(userChoice) {
+    const choices = ['Stone', 'Paper', 'Scissor'];
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+    
+    let result = '';
+    
+    if(userChoice === computerChoice){
+        result = "Draw! Both chose " + userChoice;
+    } else if(
+        (userChoice === 'Stone' && computerChoice === 'Scissor') ||
+        (userChoice === 'Paper' && computerChoice === 'Stone') ||
+        (userChoice === 'Scissor' && computerChoice === 'Paper')
+    ){
+        result = "You Win! " + userChoice + " beats " + computerChoice;
+    } else {
+        result = "You Lose! " + computerChoice + " beats " + userChoice;
+    }
+    
+    document.getElementById('result').innerText = result;
+}
+</script>
+
+</body>
+</html>
