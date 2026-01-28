@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { use } from 'react'
 import { useParams } from 'react-router-dom'
+import {useEffect,useState} from 'react'
 const ProductDetails = () => {
-     const products=[
-        {id:1,name:"Laptop",price:"30000",description:"Acer laptop with 8th gen intel processor"},
-        {id:2,name:"Mouse",price:"10000",description:"Wireless mouse with 2 years warrenty"},
-        {id:3,name:"Mobile",price:"50000",description:"Samsung mobile with 6gb ram and 128gb storage"},
-        {id:4,name:"Keyboard",price:"3000",description:"Mechanical keyboard with rgb lighting"},
-    ]
+  const[product,setProduct]=useState({})
+   
     const{id}=useParams()
-    const product=products.find((p)=>p.id===Number(id))
+    useEffect(()=>{
+    fetch(`https://fakestoreapi.com/products/${id}`)
+  .then(response => response.json())
+  .then(data =>setProduct(data));
+    },[])
+    console.log(product);
+    
   return (
     <div>
         <h1>Product Details</h1>
-        <h2>{product.name}</h2>
+        <h2>{product.title}</h2>
         <p>Price:{product.price}</p>
-        <p>{product.description}</p>
+        <p> Description{product.description}</p>
+        <p>Category{product.category}</p>
     </div>
 
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 const Form = () => {
     const[form,setForm]=useState({
@@ -6,6 +6,9 @@ const Form = () => {
         email:"",
         age:"",
         department:""
+    })
+    useEffect (()=>{
+        console.log("Form component useEffect called");
     })
     const handleChange=(e)=>{
         const {name,value}=e.target

@@ -10,6 +10,9 @@ import  Contact from "./pages/Contact"
 import Navbar from "./components/Navbar"
 import Products from "./pages/Products"
 import ProductDetails from "./pages/ProductDetails"
+import Reducer from "./hooks/Reducer"
+import {createContext} from "react"
+export const userContext=createContext()
 const App = () => {
   return (
     <>
@@ -21,6 +24,11 @@ const App = () => {
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/products/:id" element={<ProductDetails/>}/>
+      <Route path="/state" element={<State/>}/>
+      <Route path="/form" element={<Form/>}/>
+      <Route path="/profile" element={<Profile/>}/>
+      <Route path="/reducer" element={<Reducer/>}/>
+
 
     </Routes>
 
